@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <title>Checkout example for Bootstrap</title>
+
+    <!-- Custom styles for this template -->
+    <link href="form-validation.css" rel="stylesheet">
+  </head>
+
+  <body class="bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 order-md-1">
+          <h4 class="mb-3">Billing address</h4>
+          <form id="formhastira" class="needs-validation" action="filetujuan.php" method="post">
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="firstName">First name</label>
+                <input type="text" class="form-control" name="firstName" id="firstName" placeholder="" value="">
+                <div class="invalid-feedback">
+                  Valid first name is .
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="lastName">Last name</label>
+                <input type="text" class="form-control" name="lastName" id="lastName" placeholder="" value="">
+                <div class="invalid-feedback">
+                  Valid last name is .
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="username">Username</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">@</span>
+                </div>
+                <input type="text" class="form-control" name="Username" id="username" placeholder="Username">
+                <div class="invalid-feedback" style="width: 100%;">
+                  Your username is .
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="email">Email <span class="text-muted">(Optional)</span></label>
+              <input type="email" class="form-control" name="Email" id="email" placeholder="you@example.com">
+              <div class="invalid-feedback">
+                Please enter a valid email address for shipping updates.
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="address">Address</label>
+              <input type="text" class="form-control" name="Address" id="address" placeholder="" >
+              <div class="invalid-feedback">
+                Please enter your shipping address.
+              </div>
+            </div>
+            
+            <hr class="mb-4">
+      <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="gambar">Upload your identity</label>
+                <input type="file" accept="image/*" name="gambarku" class="form-control" id="gambarku" placeholder="">
+                <small class="text-muted">Please use valid identity</small>
+                <div class="invalid-feedback">
+                  You must upload this file
+                </div>
+              </div>
+        <div class="mb-4">
+           <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="gambar">Upload your photo</label>
+                <input type="file" accept="image/*" name="fotoku" class="form-control" id="fotoku" placeholder="">
+        
+                <small class="text-muted">Please use valid identity</small>
+                <div class="invalid-feedback">
+                  File format in png or jpg and size no more than 2MB
+                </div>
+              </div>
+              <br>
+            <hr class="mb-4">
+            <button id="create" name="action" value="create" class="btn btn-primary btn-lg btn-block" type="submit">Submit</button>
+      <button id="read" name="action" value="read" class="btn btn-info btn-lg btn-block" type="submit">Read Data</button>
+      <button id="update" name="action" value="update" class="btn btn-primary btn-lg btn-block" type="submit">Update Data</button>
+      <button id="delete" name="action" value="delete" class="btn btn-info btn-lg btn-block" type="submit">Delete Data</button>
+        <br>
+      <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">&copy; 2017-2018 Company Name</p>
+        <ul class="list-inline">
+          <li class="list-inline-item"><a href="#">Privacy</a></li>
+          <li class="list-inline-item"><a href="#">Terms</a></li>
+          <li class="list-inline-item"><a href="#">Support</a></li>
+        </ul>
+      </footer>
+
+          </form>
+        </div>
+    <div id="result"></div>
+      </div>
+      <hr class="mb-4">
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script src="../../../../dist/js/bootstrap.min.js"></script>
+  <script type="text/javascript"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="asynchronous.js"></script>
+    <script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+      (function() {
+        'use strict';
+
+        window.addEventListener('load', function() {
+          // Fetch all the forms we want to apply custom Bootstrap validation styles to
+          var forms = document.getElementsByClassName('needs-validation');
+
+          // Loop over them and prevent submission
+          var validation = Array.prototype.filter.call(forms, function(form) {
+            form.addEventListener('submit', function(event) {
+              if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+              form.classList.add('was-validated');
+            }, false);
+          });
+        }, false);
+      })();
+    </script>
+    <script>
+      $("#formhastira").submit(kirimdata);
+    </script>
+  </body>
+
+</html>
